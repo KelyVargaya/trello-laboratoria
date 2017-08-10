@@ -1,35 +1,182 @@
+*{
 
+	font-family: "Mystery Quest", cursive;
+	box-sizing: border-box;
+}
 
 body{
-	background-color: #0079BF;
+	background: #0079BF;
+	padding: 5px;
+	color: white;
 }
 header{
   background-color: #7fb3d1;
+  padding-right: 60px;
+}
+img{
+
+-webkit-transform: rotate(-8deg); padding-top: 30px;
 }
 
 #page{
 
-  width:70%;
- height: 2150px;
+ width:80%;
+
  background:white;
  margin: 0px auto;
 }
-.tablero{
-	font-size: 16px;
+
+.botonPrimero{
+	margin-left: 20px;
+	margin-bottom: 200px;
+	background-color: #0067A3;
+	width: 30%;
+	height: 50%;
+	color: #A9C6D7;
+	border-color: transparent;
+}
+
+
+.botonPrimero:hover{
+	background-color: #005586;
+	color: #ffffff;
+	border-color: transparent;
+}
+
+
+#contenedorTodo{
+	width: 100%;
+	margin:20px;
+	display: inline-block;
+
+}
+
+.guardarLista{
+	width: 27%;
+	background-color: #e2e4e6;
+	display: inline-block;
+	margin: 20px;
+	padding-bottom: 8px;
+	border-radius: 5px;
+	margin-bottom: 200px;
+}
+
+.contenedorTarjeta{
+	width: 25%;
+	background-color: #e2e4e6;
+	display: inline-block;
+	margin: 20px;
+	padding: 10px;
+ 	border-radius: 5px;
+}
+
+
+#textareaLista{
+	width: 90%;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+.botonLista{
+	width: 78%;
+	margin-left: 10px;
+	margin-top: 10px;
+	display: inline-block;
+	height: 30px;
+	background-color: #5CB047;
 	color: #ffffff;
 	font-weight: bold;
-	margin-left: 2px;
+	border-color: transparent;
+}
+
+.botonLista:hover{
+	background-color:white;
+	color: #5CB047;
+	font-weight: bold;
+	border-color: #5CB047;
+}
+
+.estiloTitulo{
+	color: #5398c1;
+	font-size: 30px;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-left: 5%;
+	font-size: 12px;
+	background-color: #0067a3;
+	font-weight: bold;
+}
+
+.textareaAñadirTarjeta{
+	background-color: #ffffff;
+	width: 100%;
+	height: 25px;
+	color: #000000;
+	margin-top: 3%;
+	border: #CDD2D4;
+	text-align: left;
+	border-radius: 5%;
+}
+
+.form-control {
+    display: block;
+    width: 95%;
+    height: 28px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.botonTarjeta{
+	width: 100%;
+	height: 40px;
+	background-color: #5CB047;
+	color: #ffffff;
+	font-weight: bold;
+	border-color: transparent;
+	cursor: pointer;
+}
+
+.distancia{
+	display: block;
+}
+
+.icon-cancel{
 	display: inline;
+	margin-left: 12px;
+	color: #E2E4E6;
 }
 
 input[type=text]:focus {
-    width: 100%;
+    width: 95%;
 }
 
-.buscador{
-	margin-top: 5px;
-	background-color: #5398C1 !important;
+.borrar{
+    display: none;
+}
+
+.delete{
+	height: 30px;
+	background-color: #5CB047;
 	color: #ffffff;
+	font-weight: bold;
 	border-color: transparent;
-	border-radius: 3px;
+	width: 10%;
+	color: green;
+	border: none;
+	margin-left:4px; 
+}
+
+.delete:hover{
+	background-color:white;
+	color: #5CB047;
+	font-weight: bold;
+	border: #5CB047;
 }

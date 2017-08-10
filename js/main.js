@@ -1,87 +1,9 @@
-var lista = document.getElementById('tarea');
-var t = [];
-function iniciar () {
-	var div = document.createElement('div');
-	var input = document.createElement('input');
-		input.setAttribute('type', 'texto');
-		input.setAttribute('id', 'texto');
-		input.setAttribute('placeholder', 'Añadir lista...')
-	var p= document.createElement('p');
-	var button = document.createElement('button');
-		button.setAttribute('onclick', 'añadir()');
-		button.innerHTML='Guardar';
-	var borrar = document.createElement('button');
-		borrar.setAttribute('onclick', 'delete()');
-		borrar.innerHTML='X';
-	p.appendChild(button);
-	p.appendChild(borrar);
-	div.appendChild(input);
-	div.appendChild(p);
+var agregarTareas = document.getElementById('botonPrimero');
+agregarTareas.onclick = function trello() {
 
-	lista.removeAttribute('onclick');
-	lista.replaceChild(div, lista.firstChild);
-}
-
-function añadir() {
-	var titulo = document.getElementById('texto').value;
-	console.log(titulo);
-	var div = document.createElement('div');
-	var h1=document.createElement('h3');
-		h1.innerHTML=titulo;
-	var p= document.createElement('p');
-		p.setAttribute('id', 'agregar');
-		p.setAttribute('onclick','tarea(this)');
-		p.innerHTML= 'Añadir una tarjeta...';
-	div.appendChild(h1);
-	div.appendChild(p);
-	lista.replaceChild(div, lista.firstChild);
-}
-
-function tarea(e){
-	var div=document.createElement('div');
-	var input = document.createElement('input');
-		input.setAttribute('type', 'texto');
-		input.setAttribute('id', 'tareas');
-	var p= document.createElement('p');
-	var button = document.createElement('button');
-		button.setAttribute('onclick', 'tareas()');
-		button.innerHTML='Guardar';
-	var borrar = document.createElement('button');
-		borrar.setAttribute('onclick', 'delete()');
-		borrar.innerHTML='X';
-	p.appendChild(button);
-	p.appendChild(borrar);
-	div.appendChild(input);
-	div.appendChild(p);
-
-	e.removeAttribute('onclick');
-	e.replaceChild(div, e.firstChild);
-}
-
-function tareas() {
-	var texto=document.getElementById('tareas').value;
-	t.push(texto);
-	var div=document.createElement('div');
-	for (var i = 0; i <=t.length; i++) {
-		if(t[i]!=undefined){
-			var div2=document.createElement('div');
-			div2.innerHTML=t[i];
-			div.appendChild(div2);
-		}
-	}
-	var p= document.createElement('p');
-		p.setAttribute('onclick','tarea(this)');
-		p.innerHTML= 'Añadir una tarjeta...';
-	div.appendChild(p);
-
-	var d = document.getElementById('agregar');
-	d.replaceChild(div, d.firstChild);
-}
-
-/*function trello(){
-
-	var ocultarCol = document.getElementsByClassName('borrarCol')[0];
-	ocultarCol.classList.toggle('borrar');
+	//Para que oculte el primer boton de agregar Lista 
+	var ocultarBoton = document.getElementsByClassName('borrarBtn')[0];
+	ocultarBoton.classList.toggle('borrar');
 
 	var contenedorGuardarLista = document.createElement('div');
 	contenedorGuardarLista.setAttribute('class', 'guardarLista');
@@ -96,20 +18,21 @@ function tareas() {
 	botonAgregarLista.setAttribute("class", "botonLista");
 	var textoBotonUno= document.createTextNode("Guardar");
 
-	var iconocancelar=document.createElement("span");
-	iconocancelar.setAttribute("class", "icon-cancel");
+	var cancelar=document.createElement("button");
+	cancelar.setAttribute("class", "delete");
+	cancelar.innerHTML = "X";
 
-	$(document).ready(function(){
-		$(".icon-cancel").click(function(){
-			$(".borrarCol").toggleClass("borrar");
-			$(".guardarLista").remove();
+	contenedorGuardarLista.addEventListener("click", function(){
+		cancelar.click(function(){
+			borrarBtn.toggleClass("borrar");
+			guardarLista.remove();
 		});
 	});
 
 	botonAgregarLista.appendChild(textoBotonUno);
 	contenedorGuardarLista.appendChild(textoAgregarLista);
 	contenedorGuardarLista.appendChild(botonAgregarLista);
-	contenedorGuardarLista.appendChild(iconocancelar);
+	contenedorGuardarLista.appendChild(cancelar);
 	todasLasListas.appendChild(contenedorGuardarLista);
 
 	botonAgregarLista.addEventListener('click', function(){
@@ -118,15 +41,15 @@ function tareas() {
 		document.getElementById('textareaLista').value = "";
 
 		if(tituloLista == "" || tituloLista == null){
-			alert("Debes ingresar el nombre de la lista");
-			return;
+			alert("Debes ingresar el nombre de la lista :3");
+			return; 
 		}
-
+		
 		var columnaOrden = document.createElement('div');
-		columnaOrden.setAttribute('class', 'distancia');
+		columnaOrden.setAttribute('class', 'contenedorTarjeta');
 
 		var tituloFinalLista = document.createElement('p');
-		tituloFinalLista.setAttribute('class','name-list estiloTitulo');
+		tituloFinalLista.setAttribute('class','estiloTitulo');
 		var textTarea = document.createTextNode(tituloLista);
 
 		var botonAñadirTarjeta = document.createElement('button');
@@ -145,6 +68,14 @@ function tareas() {
 			textTarjetas.setAttribute("type", "text");
 			tituloFinalLista.appendChild(textTarjetas);
    		});
+
+   		botonAgregarLista .addEventListener("click", function(event) {
+	if (event.target && event.target.className == "delete") {
+    event.target.parentNode.remove();
+  }
+});
 	});
+
+	
+
 }
-*/
