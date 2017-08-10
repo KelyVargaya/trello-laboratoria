@@ -1,0 +1,35 @@
+
+
+body{
+	background-color: #0079BF;
+}
+header{
+  background-color: #7fb3d1;
+}
+
+#page{
+
+  width:70%;
+ height: 2150px;
+ background:white;
+ margin: 0px auto;
+}
+.tablero{
+	font-size: 16px;
+	color: #ffffff;
+	font-weight: bold;
+	margin-left: 2px;
+	display: inline;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+.buscador{
+	margin-top: 5px;
+	background-color: #5398C1 !important;
+	color: #ffffff;
+	border-color: transparent;
+	border-radius: 3px;
+}
